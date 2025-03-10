@@ -41,6 +41,7 @@
             this.txtArama = new System.Windows.Forms.TextBox();
             this.btnAra = new System.Windows.Forms.Button();
             this.cbYetki = new System.Windows.Forms.ComboBox();
+            this.btnMusteriler = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKullanicilar)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -145,11 +146,22 @@
             this.cbYetki.TabIndex = 20;
             this.cbYetki.SelectedIndexChanged += new System.EventHandler(this.cbYetki_SelectedIndexChanged);
             // 
+            // btnMusteriler
+            // 
+            this.btnMusteriler.Location = new System.Drawing.Point(1783, 35);
+            this.btnMusteriler.Name = "btnMusteriler";
+            this.btnMusteriler.Size = new System.Drawing.Size(224, 60);
+            this.btnMusteriler.TabIndex = 21;
+            this.btnMusteriler.Text = "Müşteriler";
+            this.btnMusteriler.UseVisualStyleBackColor = true;
+            this.btnMusteriler.Click += new System.EventHandler(this.btnMusteriler_Click);
+            // 
             // frmYonetici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(3204, 1489);
+            this.Controls.Add(this.btnMusteriler);
             this.Controls.Add(this.cbYetki);
             this.Controls.Add(this.btnAra);
             this.Controls.Add(this.txtArama);
@@ -176,5 +188,6 @@
         private System.Windows.Forms.TextBox txtArama;
         private System.Windows.Forms.Button btnAra;
         private System.Windows.Forms.ComboBox cbYetki;
+        private System.Windows.Forms.Button btnMusteriler;
     }
 }

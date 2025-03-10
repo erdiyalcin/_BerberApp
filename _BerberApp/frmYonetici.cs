@@ -163,5 +163,12 @@ namespace _BerberApp
         {
             DataGridGuncelle();
         }
+
+        private void btnMusteriler_Click(object sender, EventArgs e)
+        {
+            frmMusteriler frm = new frmMusteriler();
+            frm.Show();
+
+        }
     }
 }

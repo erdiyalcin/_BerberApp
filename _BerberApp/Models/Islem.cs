@@ -6,36 +6,24 @@ namespace _BerberApp.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Kullanici")]
-    public partial class Kullanici
+    [Table("Islem")]
+    public partial class Islem
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Kullanici()
+        public Islem()
         {
-            Musteri = new HashSet<Musteri>();
             Randevu = new HashSet<Randevu>();
         }
 
-        public int kullaniciID { get; set; }
+        public int islemID { get; set; }
 
         [StringLength(50)]
         public string ad { get; set; }
 
-        [StringLength(50)]
-        public string soyad { get; set; }
+        [Column(TypeName = "money")]
+        public decimal? fiyat { get; set; }
 
-        [StringLength(50)]
-        public string eposta { get; set; }
-
-        [StringLength(50)]
-        public string sifre { get; set; }
-
-        public int? yetkiID { get; set; }
-
-        public virtual Yetki Yetki { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Musteri> Musteri { get; set; }
+        public int? sure { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Randevu> Randevu { get; set; }

@@ -6,17 +6,16 @@ namespace _BerberApp.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Kullanici")]
-    public partial class Kullanici
+    [Table("Musteri")]
+    public partial class Musteri
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Kullanici()
+        public Musteri()
         {
-            Musteri = new HashSet<Musteri>();
             Randevu = new HashSet<Randevu>();
         }
 
-        public int kullaniciID { get; set; }
+        public int musteriID { get; set; }
 
         [StringLength(50)]
         public string ad { get; set; }
@@ -24,18 +23,15 @@ namespace _BerberApp.Models
         [StringLength(50)]
         public string soyad { get; set; }
 
-        [StringLength(50)]
-        public string eposta { get; set; }
+        [StringLength(20)]
+        public string telefon { get; set; }
 
-        [StringLength(50)]
-        public string sifre { get; set; }
+        [Column(TypeName = "smalldatetime")]
+        public DateTime? kayitTarihi { get; set; }
 
-        public int? yetkiID { get; set; }
+        public int? kullaniciID { get; set; }
 
-        public virtual Yetki Yetki { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Musteri> Musteri { get; set; }
+        public virtual Kullanici Kullanici { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Randevu> Randevu { get; set; }
